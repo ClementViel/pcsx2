@@ -19,6 +19,12 @@
  *
  */
 
+
+#include "SSE2NEON.h"
+
+typedef float32x4_t __m128;
+typedef int32x4_t __m128i;
+
 class alignas(16) GSVector4i
 {
 	static GSVector4i m_xff[17];
