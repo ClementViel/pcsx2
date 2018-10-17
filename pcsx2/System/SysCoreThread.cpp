@@ -34,9 +34,11 @@
 #ifdef __WXMSW__
 #	include <wx/msw/wrapwin.h>
 #endif
-
+#ifdef X86_CPU
 #include "x86emitter/x86_intrin.h"
-
+#else
+#include "armemitter/arm_intrin.h"
+#endif
 // --------------------------------------------------------------------------------------
 //  SysCoreThread *External Thread* Implementations
 //    (Called from outside the context of this thread)

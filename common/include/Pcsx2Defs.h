@@ -32,8 +32,11 @@
 #endif
 
 #include "Pcsx2Types.h"
-
+#ifdef X86_CPU
 #include "x86emitter/x86_intrin.h"
+#else
+#include "armemitter/arm_intrin.h"
+#endif
 
 // Renamed ARRAYSIZE to ArraySize -- looks nice and gets rid of Windows.h conflicts (air)
 // Notes: I'd have used ARRAY_SIZE instead but ran into cross-platform lib conflicts with

@@ -252,12 +252,15 @@ typedef int64 sint64;
 
 #if !defined(_M_SSE) && (!defined(_WIN32) || defined(_M_AMD64) || defined(_M_IX86_FP) && _M_IX86_FP >= 2)
 
-	#define _M_SSE 0x200
+	#define _M_SSE 0x20
 
 #endif
 
-#if _M_SSE >= 0x200
+#if _M_SSE == 0x20
+	#include <arm_neon.h>
+#endif
 
+#if _M_SSE >= 0x200
 	#include <xmmintrin.h>
 	#include <emmintrin.h>
 
@@ -279,9 +282,7 @@ typedef int64 sint64;
 		(row3) = _mm_castps_si128(_mm_shuffle_ps(tmp2, tmp3, 0xDD)); \
 	}
 
-#else
 
-#error TODO: GSVector4 and GSRasterizer needs SSE2
 
 #endif
 

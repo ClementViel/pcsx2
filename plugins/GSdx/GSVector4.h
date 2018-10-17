@@ -19,6 +19,9 @@
  *
  */
 
+
+#include "SSE2NEON.h"
+
 class alignas(16) GSVector4
 {
 public:
